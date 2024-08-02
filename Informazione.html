@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informazione</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        h1 {
+            color: #dc3545;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .button-group a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #dc3545;
+            padding: 15px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+        
+        .button-group a:hover {
+            background-color: #c82333;
+            transform: scale(1.02);
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #c82333;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .home-link:hover {
+            background-color: #e01313;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Informazione</h1>
+        <div class="button-group">
+            <a href="https://www.autostrade.it" target="_blank">Autostrade per l'Italia</a>
+            <a href="https://www.infoviaggiando.it/it" target="_blank">InfoViaggiando</a>
+            <a href="https://www.stradadeiparchi.it" target="_blank">Strada dei Parchi</a>
+            <a href="https://www.stradeanas.it" target="_blank">ANAS</a>
+        </div>
+    </div>
+    <a href="index.html" class="home-link">← Torna alla Home</a>
+
+</body>
+</html>

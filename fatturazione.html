@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatturazione - Inserimento Ore</title>
+    <link rel="stylesheet" href="fatturazione.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        h1 {
+            color: #dc3545;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #dc3545;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #c82333;
+        }
+
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container th, .table-container td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .table-container th {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #c82333;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .home-link:hover {
+            background-color: #e01313;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-link">← Torna alla Home</a>
+        <h1>Inserimento Ore Lavorate</h1>
+        <form id="hours-form">
+            <div class="form-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date">
+            </div>
+            <div class="form-group">
+                <label for="normal-hours">Ore Normali:</label>
+                <input type="number" id="normal-hours" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="overtime-hours">Ore Straordinarie:</label>
+                <input type="number" id="overtime-hours" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="break-hours">Ore di Pausa:</label>
+                <input type="number" id="break-hours" step="0.1">
+            </div>
+            <div class="form-group">
+                <button type="button" id="save-btn">Salva</button>
+                <button type="button" id="clear-btn">Cancella</button>
+            </div>
+        </form>
+
+        <div class="form-group">
+            <label for="month">Seleziona il Mese:</label>
+            <select id="month">
+                <option value="">--Seleziona Mese--</option>
+                <option value="01">Gennaio</option>
+                <option value="02">Febbraio</option>
+                <option value="03">Marzo</option>
+                <option value="04">Aprile</option>
+                <option value="05">Maggio</option>
+                <option value="06">Giugno</option>
+                <option value="07">Luglio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Settembre</option>
+                <option value="10">Ottobre</option>
+                <option value="11">Novembre</option>
+                <option value="12">Dicembre</option>
+            </select>
+        </div>
+
+        <div class="summary">
+            <h2>Riepilogo Mensile</h2>
+            <p>Ore Normali: <span id="total-normal-hours">0.00</span></p>
+            <p>Ore Straordinarie: <span id="total-overtime-hours">0.00</span></p>
+            <p>Ore di Pausa: <span id="total-break-hours">0.00</span></p>
+            <p>Ore Totali: <span id="total-hours">0.00</span></p>
+        </div>
+
+        <div class="table-container">
+            <h2>Ore Lavorate</h2>
+            <table id="hours-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Ore Normali</th>
+                        <th>Ore Straordinarie</th>
+                        <th>Ore di Pausa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="export-btn" class="btn-export">Esporta in Excel</button>
+        
+        <!-- Nuovo pulsante per il reindirizzamento -->
+        <button id="auth-btn" class="btn-auth">Accedi alle Buste paga</button>
+    </div>
+
+    <script src="fatturazione.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script>
+        document.getElementById('auth-btn').addEventListener('click', function() {
+            const authUrl = 'https://jauthentication.enerj.it/Identity/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3D7cce4d2f31b649f980f02903e18ff557%26state%3DT090NFZNZ2hIbHhtWVVpLn5vNWVDQlJhc05yUTBYd3pNSVFxNVdjT2Nud1Ja%26redirect_uri%3Dhttps%253A%252F%252Fpersonale.rossettogroup.it%252Fcallback%26scope%3Dopenid%2520profile%2520%26code_challenge%3Dt8a_yuKYXZwJ5hmXXwEKVUQ3wlSyg524Ej4wz5NSu6k%26code_challenge_method%3DS256%26nonce%3DT090NFZNZ2hIbHhtWVVpLn5vNWVDQlJhc05yUTBYd3pNSVFxNVdjT2Nud1Ja';
+            window.location.href = authUrl;
+        });
+    </script>
+</body>
+</html>

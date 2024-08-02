@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoGo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div class="login-container" id="login-container">
+            <h2>Accesso Sicuro</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                </div>
+                <div class="input-group remember-me">
+                    <label>
+                        <input type="checkbox" id="remember-me"> Rimani loggato
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary">Accedi</button>
+            </form>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="welcome-container" id="welcome-container" style="display: none;">
+            <header>
+                <h1 id="welcome-message">Benvenuto!</h1>
+            </header>
+            <nav class="navbar">
+                <a href="camion.html" class="nav-link">
+                    <img src="truck-icon.png" alt="Al Lavoro" class="nav-icon">
+                    <span>Al Lavoro</span>
+                </a>
+                <a href="fatturazione.html" class="nav-link">
+                    <img src="euro-icon.png" alt="Quanto abbiamo Fatturato?" class="nav-icon">
+                    <span>Quanto abbiamo Fatturato?</span>
+                </a>
+                <a href="https://www.3bmeteo.com" class="nav-link" id="weather-link" target="_blank">
+                    <img src="sun-icon.png" alt="Che tempo fa?" class="nav-icon">
+                    <span>Che tempo fa?</span>
+                </a>
+                <a href="Informazione.html" class="nav-link">
+                    <img src="news-icon.png" alt="Rallentamenti?" class="nav-icon">
+                    <span>Rallentamenti?</span>
+                </a>
+                <a href="appuntamenti.html" class="nav-link">
+                    <img src="impegni.png" alt="Impegni" class="nav-icon">
+                    <span>Impegni</span>
+                </a>
+                <a href="gestione_casa.html" class="nav-link">
+                    <img src="home-icon.png" alt="Gestione Casa" class="nav-icon">
+                    <span>Gestione Casa</span>
+                </a>
+            </nav>
+            <button onclick="logout()" class="btn-secondary">Logout</button>
+        </div>
+    </div>
+    <!-- Pop-up di Avviso -->
+<div id="popup-overlay">
+    <div id="popup">
+        <h4></h4>
+        <button id="popup-close">Chiudi</button>
+    </div>
+</div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

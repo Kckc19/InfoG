@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Casa</title>
+    <link rel="stylesheet" href="gestione_casa.css">
+</head>
+<body>
+    <!-- Menu Laterale -->
+    <div id="side-menu" class="side-menu">
+        <button id="menu-close" class="menu-close">&times;</button>
+        <ul>
+            <li><a href="#" data-section="cibo">Cibo</a></li>
+            <li><a href="#" data-section="medicine">Medicine</a></li>
+            <li><a href="#" data-section="bagno">Bagno</a></li>
+            <li><a href="index.html">Torna Alla Home</a></li>
+        </ul>
+    </div>
+
+    <!-- Pulsante per aprire il menu laterale -->
+    <button id="menu-toggle" class="btn-primary">Menu</button>
+
+    <!-- Contenuto Principale -->
+    <div class="container">
+        <!-- Sezione Cibo -->
+        <div id="cibo" class="section">
+            <h2>Sezione Cibo</h2>
+            <form id="food-form">
+                <div class="input-group">
+                    <label for="food-name">Nome:</label>
+                    <input type="text" id="food-name" name="food-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="food-quantity">Numero Confezioni:</label>
+                    <input type="number" id="food-quantity" name="food-quantity" required>
+                </div>
+                <div class="input-group">
+                    <label for="food-price">Prezzo:</label>
+                    <input type="number" step="0.01" id="food-price" name="food-price">
+                </div>
+                <div class="input-group">
+                    <label for="food-type">Tipologia:</label>
+                    <select id="food-type" name="food-type" required>
+                        <option value="Dolce">Dolce</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Carne">Carne</option>
+                        <option value="Frutta">Frutta</option>
+                        <option value="Verdura">Verdura</option>
+                        <option value="Surgelati">Surgelati</option>
+                        <option value="Spezie">Spezie</option>
+                        <option value="Scatolame">Scatolame</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="food-expiry-date">Data di Scadenza:</label>
+                    <input type="date" id="food-expiry-date" name="food-expiry-date">
+                </div>
+                <button type="submit" class="btn-primary">Aggiungi Cibo</button>
+            </form>
+
+            <!-- Moduli per gestire le confezioni -->
+            <div class="section-actions">
+                <!-- Modulo per aumentare le confezioni -->
+                <form id="increase-food-quantity-form">
+                    <div class="input-group">
+                        <label for="food-increase-name">Nome Prodotto:</label>
+                        <select id="food-increase-name" name="food-increase-name" required>
+                            <!-- Opzioni populate dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="food-increase-quantity">Numero Aggiuntivo:</label>
+                        <input type="number" id="food-increase-quantity" name="food-increase-quantity" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Aumenta Confezioni</button>
+                </form>
+
+                <!-- Modulo per rimuovere le confezioni -->
+                <form id="remove-food-form">
+                    <div class="input-group">
+                        <label for="food-remove-name">Nome Prodotto:</label>
+                        <select id="food-remove-name" name="food-remove-name" required>
+                            <!-- Opzioni populate dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="food-remove-quantity">Numero da Rimuovere:</label>
+                        <input type="number" id="food-remove-quantity" name="food-remove-quantity" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Rimuovi Confezioni</button>
+                </form>
+            </div>
+
+            <!-- Pulsanti per esportare e importare -->
+            <div class="button-group">
+                <button id="export-food-expiry" class="btn-secondary">Esporta Cibo in Scadenza</button>
+                <button id="export-food" class="btn-secondary">Esporta Tutti i Prodotti Cibo</button>
+                <button id="import-excel-food" class="btn-secondary">Importa Database da Excel</button>
+                <input type="file" id="file-input-food" style="display: none;">
+            </div>
+
+            <!-- Tabella per visualizzare i dati -->
+            <table id="food-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Numero Confezioni</th>
+                        <th>Prezzo</th>
+                        <th>Tipologia</th>
+                        <th>Data di Scadenza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Righe dinamiche della tabella -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sezione Medicine -->
+        <div id="medicine" class="section">
+            <h2>Sezione Medicine</h2>
+            <form id="medicine-form">
+                <div class="input-group">
+                    <label for="medicine-name">Nome:</label>
+                    <input type="text" id="medicine-name" name="medicine-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="medicine-quantity">Numero Confezioni:</label>
+                    <input type="number" id="medicine-quantity" name="medicine-quantity" required>
+                </div>
+                <div class="input-group">
+                    <label for="medicine-price">Prezzo:</label>
+                    <input type="number" step="0.01" id="medicine-price" name="medicine-price">
+                </div>
+                <div class="input-group">
+                    <label for="medicine-type">Tipologia:</label>
+                    <select id="medicine-type" name="medicine-type" required>
+                        <option value="Antibiotico">Antibiotico</option>
+                        <option value="Primo Soccorso">Primo Soccorso</option>
+                        <option value="Integratori">Integratori</option>
+                        <option value="Antinfiammatori">Antinfiammatori</option>
+                        <option value="Soluzioni per Aerosol">Soluzioni per Aerosol</option>
+                        <option value="Pillole Mamma">Pillole Mamma</option>
+                        <option value="Asma">Asma</option>
+                        <option value="Pillole Papà">Pillole Papà</option>
+                        <option value="Pomate">Pomate</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="medicine-dosage">Posologia:</label>
+                    <input type="text" id="medicine-dosage" name="medicine-dosage">
+                </div>
+                <div class="input-group">
+                    <label for="medicine-notes">Note:</label>
+                    <textarea id="medicine-notes" name="medicine-notes"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="medicine-expiry-date">Data di Scadenza:</label>
+                    <input type="date" id="medicine-expiry-date" name="medicine-expiry-date">
+                </div>
+                <button type="submit" class="btn-primary">Aggiungi Medicina</button>
+            </form>
+
+            <!-- Moduli per gestire le confezioni -->
+            <div class="section-actions">
+                <!-- Modulo per aumentare le confezioni -->
+                <form id="increase-medicine-quantity-form">
+                    <div class="input-group">
+                        <label for="medicine-increase-name">Nome Prodotto:</label>
+                        <select id="medicine-increase-name" name="medicine-increase-name" required>
+                            <!-- Opzioni populate dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="medicine-increase-quantity">Numero Aggiuntivo:</label>
+                        <input type="number" id="medicine-increase-quantity" name="medicine-increase-quantity" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Aumenta Confezioni</button>
+                </form>
+
+                <!-- Modulo per rimuovere le confezioni -->
+                <form id="remove-medicine-form">
+                    <div class="input-group">
+                        <label for="medicine-remove-name">Nome Prodotto:</label>
+                        <select id="medicine-remove-name" name="medicine-remove-name" required>
+                            <!-- Opzioni populate dinamicamente -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="medicine-remove-quantity">Numero da Rimuovere:</label>
+                        <input type="number" id="medicine-remove-quantity" name="medicine-remove-quantity" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Rimuovi Confezioni</button>
+                </form>
+            </div>
+
+            <!-- Pulsanti per esportare e importare -->
+            <div class="button-group">
+                <button id="export-medicine-expiry" class="btn-secondary">Esporta Medicina in Scadenza</button>
+                <button id="export-medicine" class="btn-secondary">Esporta Tutti i Prodotti Medicina</button>
+                <button id="import-excel-medicine" class="btn-secondary">Importa Database da Excel</button>
+                <input type="file" id="file-input-medicine" style="display: none;">
+            </div>
+
+            <!-- Tabella per visualizzare i dati -->
+            <table id="medicine-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Numero Confezioni</th>
+                        <th>Prezzo</th>
+                        <th>Tipologia</th>
+                        <th>Posologia</th>
+                        <th>Note</th>
+                        <th>Data di Scadenza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Righe dinamiche della tabella -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sezione Bagno -->
+        <div id="bagno" class="section">
+            <h2>Sezione Bagno</h2>
+            <form id="bathroom-form">
+                <div class="input-group">
+                    <label for="bathroom-name">Nome:</label>
+                    <input type="text" id="bathroom-name" name="bathroom-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="bathroom-quantity">Numero Confezioni:</label>
+                    <input type="number" id="bathroom-quantity" name="bathroom-quantity" required>
+                </div>
+                <div class="input-group">
+                    <label for="bathroom-price">Prezzo:</label>
+                    <input type="number" step="0.01" id="bathroom-price" name="bathroom-price">
+                </div>
+                <div class="input-group">
+                    <label for="bathroom-type">Tipologia:</label>
+                    <select id="bathroom-type" name="bathroom-type" required>
+                        <option value="Sapone">Sapone</option>
+                        <option value="Shampoo">Shampoo</option>
+                        <option value="Dentifricio">Dentifricio</option>
+                        <option value="Deodorante">Deodorante</option>
+                        <option value="Carta Igienica">Carta Igienica</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Aggiungi Articolo Bagno</button>
+            </form>
+
+            <!-- Pulsanti per esportare e importare -->
+            <div class="button-group">
+                <button id="export-bathroom" class="btn-secondary">Esporta Tutti i Prodotti Bagno</button>
+                <button id="import-excel-bathroom" class="btn-secondary">Importa Database da Excel</button>
+                <input type="file" id="file-input-bathroom" style="display: none;">
+            </div>
+
+            <!-- Tabella per visualizzare i dati -->
+            <table id="bathroom-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Numero Confezioni</th>
+                        <th>Prezzo</th>
+                        <th>Tipologia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Righe dinamiche della tabella -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Caricamento delle librerie JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script src="gestione_casa.js"></script>
+</body>
+</html>

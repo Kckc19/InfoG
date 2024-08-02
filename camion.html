@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camion - Percorsi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da; /* Rosso chiaro */
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Necessario per il posizionamento assoluto del link */
+        }
+
+        h1 {
+            color: #dc3545; /* Rosso elegante */
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dc3545; /* Rosso elegante */
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        td a {
+            color: #dc3545; /* Rosso elegante */
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            color: #dc3545; /* Rosso elegante */
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .home-link, .maps-link {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+        }
+        
+        .home-link {
+            background-color: #c82333;
+            right: 20px;
+        }
+        
+        .home-link:hover {
+            background-color: #e01313;
+            transform: scale(1.02);
+        }
+
+        .maps-link {
+            background-color: #34a853; /* Verde per Google Maps */
+            position: absolute;
+            top: 60px; /* Posizionato sotto il pulsante "Torna alla Home" */
+            right: 20px;
+        }
+
+        .maps-link:hover {
+            background-color: #2c8c40;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="home-link">← Torna alla Home</a>
+        <a href="https://www.google.com/maps" class="maps-link" target="_blank">Avvia Google Maps</a>
+        <h1>Percorsi e Deviazioni</h1>
+
+        <h2 class="section-title">Percorsi Normali</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/VenALh7ocTsRdkPK6" target="_blank">Grande Mela a Nicolas</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/4AbZNqcj11mVsdtb8" target="_blank">Rossetto Mantova per Castelvetro</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/cKVAoW7JbpPfWwim7" target="_blank">Ritorno da Castelvetro per Mantova</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/HJNWuPaqQWNzSGoX7" target="_blank">Per andare a Cooprolama, Mulinetto di Marzano</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/qqB6NLhKavNBpANH9" target="_blank">Da Cooprolama a Mantova</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/XjDUsU3ZqW6d1Y789" target="_blank">Da Suzzara a Mantova</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/pFYZ8tYqQVcmyy9E6" target="_blank">Ingresso secondo cancello Castelvetro</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/scaaw1syD6ki89zs9" target="_blank">Fiorano Modenese alternativa uscendo a Campogalliano</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/Ko6fB32wA1mdivy19" target="_blank">Da Rossetto Trade a Fiorano uscita Campogalliano</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/wHM6stMaPNQWpedR9" target="_blank">Per caricare formaggio Cooprolama</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2 class="section-title">Deviazioni e Alternative</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/2daLhtbLAfLDxt6j6" target="_blank">Andata da Mantova a Suzzara deviazione causa rotonda nuova</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/ihAGtrreApJbqEYL6" target="_blank">Partendo da Zevio alternativa passando da Nogarole per Mantova</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/us54nniHKvAarpS38" target="_blank">Andata verso Modena autostrada chiusa tra Reggiolo e Carpi deviazione</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/dsizRJZzrmy2svLD7" target="_blank">Secondo percorso alternativo verso Modena autostrada chiusa tra Reggiolo e Carpi Alternativa passando da Ca de Frati</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/dfzNxegHvVnPSx8cA" target="_blank">Terzo percorso alternativo verso Modena autostrada chiusa tra Reggiolo e Carpi alternativa passando da Moglia</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/p8ZZTHEVSMom1FCx5" target="_blank">Tratti chiuso Carpi Reggiolo</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/XdyQV7tRrJBt2ibq6" target="_blank">Da Pegognaga autostrada chiusa a Carpi</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/1EHMLRRiyXTMv5Hb9" target="_blank">Deviazione per svincoli Borgo Ricco chiusa per andare a San Giorgio delle Pertiche</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/1RH9nHCGWkLc4nGN6" target="_blank">Da Mantova per il Faro passando per Calto</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/z1DYn71FpGn9P6W5A" target="_blank">Ritorno dal Faro per Mantova passando per Calto</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://maps.app.goo.gl/vbwpfRd1LCyvbuK97" target="_blank">Supermercato Rossetto nuovo di Brescia</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

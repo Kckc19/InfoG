@@ -1,0 +1,116 @@
+/* Stile generale del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Necessario per posizionare il pulsante assolutamente */
+}
+
+/* Stile del container principale */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e4e8;
+}
+
+/* Pulsante per tornare alla home */
+.home-link {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #dc3545; /* Colore rosso per il pulsante */
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.home-link:hover {
+    background-color: #c82333; /* Colore rosso scuro al passaggio del mouse */
+    transform: scale(1.02);
+}
+
+/* Stile per il modulo */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stile per le etichette dei campi */
+label {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Stile per i campi di input */
+input[type="datetime-local"],
+input[type="text"],
+textarea {
+    margin-top: 5px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Stile per i pulsanti */
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c82333;
+    transform: scale(1.02);
+}
+
+/* Stile per la tabella */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+th {
+    background-color: #dc3545;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Stile per il riepilogo degli appuntamenti */
+#appointment-table-container {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
