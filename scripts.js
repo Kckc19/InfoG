@@ -44,3 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
         showWelcomeMessage(username);
     }
 });
+
+function toggleMenu() {
+    let navbar = document.getElementById('navbar');
+    if (navbar.style.display === 'none' || navbar.style.display === '') {
+        navbar.style.display = 'flex';
+    } else {
+        navbar.style.display = 'none';
+    }
+}
