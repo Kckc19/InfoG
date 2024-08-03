@@ -3,197 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camion - Percorsi</title>
+    <title>Percorsi di Trasporto</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8d7da; /* Rosso chiaro */
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative; /* Necessario per il posizionamento assoluto del link */
         }
-
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
         h1 {
-            color: #dc3545; /* Rosso elegante */
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
             text-align: center;
+            color: #333;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+        .routes {
+            margin: 20px 0;
         }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
+        .route {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        th {
-            background-color: #dc3545; /* Rosso elegante */
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        td a {
-            color: #dc3545; /* Rosso elegante */
-            font-weight: bold;
+        .route a {
+            color: #007bff;
             text-decoration: none;
         }
-
-        td a:hover {
+        .route a:hover {
             text-decoration: underline;
         }
-
-        .section-title {
-            color: #dc3545; /* Rosso elegante */
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
         }
-
-        .home-link, .maps-link {
-            text-decoration: none;
-            color: #ffffff;
-            padding: 10px 15px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background-color 0.3s, transform 0.2s;
-            display: inline-block;
-            position: absolute;
-            top: 20px;
+        .pagination button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
         }
-        
-        .home-link {
-            background-color: #c82333;
-            right: 20px;
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
-        
-        .home-link:hover {
-            background-color: #e01313;
-            transform: scale(1.02);
+        .pagination button:hover {
+            background-color: #0056b3;
         }
-
-        .maps-link {
-            background-color: #34a853; /* Verde per Google Maps */
-            position: absolute;
-            top: 60px; /* Posizionato sotto il pulsante "Torna alla Home" */
-            right: 20px;
-        }
-
-        .maps-link:hover {
-            background-color: #2c8c40;
-            transform: scale(1.02);
+        @media (max-width: 768px) {
+            .route {
+                padding: 10px;
+            }
+            .pagination button {
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <a href="index.html" class="home-link">← Torna alla Home</a>
-        <a href="https://www.google.com/maps" class="maps-link" target="_blank">Avvia Google Maps</a>
-        <h1>Percorsi e Deviazioni</h1>
+<div class="container">
+    <h1>Percorsi di Trasporto</h1>
 
-        <h2 class="section-title">Percorsi Normali</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrizione</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/VenALh7ocTsRdkPK6" target="_blank">Grande Mela a Nicolas</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/4AbZNqcj11mVsdtb8" target="_blank">Rossetto Mantova per Castelvetro</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/cKVAoW7JbpPfWwim7" target="_blank">Ritorno da Castelvetro per Mantova</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/HJNWuPaqQWNzSGoX7" target="_blank">Per andare a Cooprolama, Mulinetto di Marzano</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/qqB6NLhKavNBpANH9" target="_blank">Da Cooprolama a Mantova</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/XjDUsU3ZqW6d1Y789" target="_blank">Da Suzzara a Mantova</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/pFYZ8tYqQVcmyy9E6" target="_blank">Ingresso secondo cancello Castelvetro</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/scaaw1syD6ki89zs9" target="_blank">Fiorano Modenese alternativa uscendo a Campogalliano</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/Ko6fB32wA1mdivy19" target="_blank">Da Rossetto Trade a Fiorano uscita Campogalliano</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/wHM6stMaPNQWpedR9" target="_blank">Per caricare formaggio Cooprolama</a></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h2 class="section-title">Deviazioni e Alternative</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Descrizione</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/2daLhtbLAfLDxt6j6" target="_blank">Andata da Mantova a Suzzara deviazione causa rotonda nuova</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/ihAGtrreApJbqEYL6" target="_blank">Partendo da Zevio alternativa passando da Nogarole per Mantova</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/us54nniHKvAarpS38" target="_blank">Andata verso Modena autostrada chiusa tra Reggiolo e Carpi deviazione</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/dsizRJZzrmy2svLD7" target="_blank">Secondo percorso alternativo verso Modena autostrada chiusa tra Reggiolo e Carpi Alternativa passando da Ca de Frati</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/dfzNxegHvVnPSx8cA" target="_blank">Terzo percorso alternativo verso Modena autostrada chiusa tra Reggiolo e Carpi alternativa passando da Moglia</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/p8ZZTHEVSMom1FCx5" target="_blank">Tratti chiuso Carpi Reggiolo</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/XdyQV7tRrJBt2ibq6" target="_blank">Da Pegognaga autostrada chiusa a Carpi</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/1EHMLRRiyXTMv5Hb9" target="_blank">Deviazione per svincoli Borgo Ricco chiusa per andare a San Giorgio delle Pertiche</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/1RH9nHCGWkLc4nGN6" target="_blank">Da Mantova per il Faro passando per Calto</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/z1DYn71FpGn9P6W5A" target="_blank">Ritorno dal Faro per Mantova passando per Calto</a></td>
-                </tr>
-                <tr>
-                    <td><a href="https://maps.app.goo.gl/vbwpfRd1LCyvbuK97" target="_blank">Supermercato Rossetto nuovo di Brescia</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Pagina 1 -->
+    <div id="page1" class="page active">
+        <div class="routes">
+            <div class="route">
+                <h2>Percorsi Normali</h2>
+                <p><a href="https://goo.gl/maps/xmRxurqHiT9g4u3J8" target="_blank">Da Rossetto Mantova a Rossetto Desenzano</a></p>
+                <p><a href="https://goo.gl/maps/Snc7Fak8MGe2mNMe8" target="_blank">Da Rossetto Desenzano a Rossetto Mantova</a></p>
+                <p><a href="https://goo.gl/maps/UPLE7vnWbJX8mbx76" target="_blank">Rossetto a Faro (ritorno)</a></p>
+                <p><a href="https://goo.gl/maps/7vT8eFR9vUP5PJfr7" target="_blank">Rossetto a Occhiobello (andata)</a></p>
+                <p><a href="https://goo.gl/maps/juGSZmjzaYS2pu1e8" target="_blank">Rossetto a Occhiobello (ritorno)</a></p>
+                <p><a href="https://maps.app.goo.gl/ngSJ5ziimyCTKbPp7" target="_blank">Da Mantova a Casalgrande</a></p>
+                <p><a href="https://maps.app.goo.gl/dUxPq4y24P2EBHED9" target="_blank">Da Casalgrande a Mantova</a></p>
+                <p><a href="https://maps.app.goo.gl/EdzPjAfHeinRDkK76" target="_blank">Da Mantova a Fiorano</a></p>
+                <p><a href="https://maps.app.goo.gl/q71DJBZyVnsGkgvi6" target="_blank">Da Fiorano a Mantova</a></p>
+                <p><a href="http://maps.google.com/maps?saddr=Rossetto%20Trade%20Srl.&daddr=Rossetto%20Group%20Srl&geocode=FdEMsQIdL7ClACkFFwPditWBRzHDia0JZdXCSg%3D%3D%3BFR-2qQIdUxyjACmxq4fRfR2ARzHuNKhFKr13iw%3D%3D&dirflg=d" target="_blank">Da Rossetto Mantova a San Maurizio</a></p>
+                <p><a href="https://maps.app.goo.gl/xBhYsFNwQSrUVmm27" target="_blank">Da San Maurizio a Mantova</a></p>
+                <p><a href="https://maps.app.goo.gl/jPmrFScCZusTE22o6" target="_blank">Da Mantova a Torre</a></p>
+                <p><a href="https://maps.app.goo.gl/tTa1rdbCDCS5XaxY7" target="_blank">Da Torre a Mantova</a></p>
+            </div>
+        </div>
     </div>
+
+    <!-- Pagina 2 -->
+    <div id="page2" class="page">
+        <div class="routes">
+            <div class="route">
+                <h2>Percorsi Alternativi</h2>
+                <p><a href="https://goo.gl/maps/y7eUBziqk72LV3cEA" target="_blank">Rossetto a Spaziani (andata)</a></p>
+                <p><a href="https://goo.gl/maps/nxSuoyqWZ5oMZzGW7" target="_blank">Rossetto a Spaziani (ritorno)</a></p>
+                <p><a href="https://goo.gl/maps/NozVYavkM8JduwVH6" target="_blank">Rossetto a Parona (andata)</a></p>
+                <p><a href="https://goo.gl/maps/MAuSVfHKzswrDF6r7" target="_blank">Rossetto a Parona (ritorno)</a></p>
+                <p><a href="https://goo.gl/maps/5EZrhT27E6fY7k4x7" target="_blank">Da Mantova a Mantova</a></p>
+                <p><a href="https://www.google.it/maps/dir/Rossetto+Trade+Srl.,+Via+Villanova+de+Bellis,+San+Giorgio+Bigarello,+MN/45.4203613,11.9355339/45.5350053,11.9515705/Iper+Rossetto,+Via+Caselle,+1,+35010+San+Giorgio+delle+Pertiche+PD/@45.5349931,11.9171001,13z/data=!3m1!5s0x477ed3a3821537df:0xd5aae46f72bca420!4m16!4m15!1m5!1m1!1s0x4781d58add031705:0x4ac2d56509ad89c3!2m2!1d10.8585433!2d45.1575851!1m0!1m0!1m5!1m1!1s0x477ed3a47c1a5f0d:0xafb9e945707413de!2m2!1d11.9248119!2d45.5392709!3e0" target="_blank">Da Mantova a San Giorgio delle Pertiche</a></p>
+                <p><a href="https://www.google.it/maps/dir/Iper+Rossetto,+Via+Caselle,+1,+35010+San+Giorgio+delle+Pertiche+PD/45.5127837,11.9189531/45.50497,11.9312082/Rossetto+Trade+Srl.,+Via+Villanova+de+Bellis,+San+Giorgio+Bigarello+MN/@45.4489766,11.8615783,15z/data=!3m1!5s0x477ed3a3821537df:0xd5aae46f72bca420!4m16!4m15!1m5!1m1!1s0x477ed3a47c1a5f0d:0xafb9e945707413de!2m2!1d11.9248119!2d45.5392709!1m0!1m0!1m5!1m1!1s0x4781d58add031705:0x4ac2d56509ad89c3!2m2!1d10.8585433!2d45.1575851!3e0" target="_blank">Da San Giorgio delle Pertiche a Mantova</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paginazione -->
+    <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Precedente</button>
+        <button id="nextPage" onclick="changePage(1)">Successivo</button>
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 2;
+
+    function changePage(direction) {
+        const prevButton = document.getElementById('prevPage');
+        const nextButton = document.getElementById('nextPage');
+
+        // Hide current page
+        document.getElementById('page' + currentPage).classList.remove('active');
+
+        // Update page number
+        currentPage += direction;
+
+        // Show new page
+        document.getElementById('page' + currentPage).classList.add('active');
+
+        // Disable/enable buttons based on current page
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+    }
+
+    // Initialize
+    document.getElementById('prevPage').disabled = true;
+    document.getElementById('nextPage').disabled = false;
+</script>
 
 </body>
 </html>
