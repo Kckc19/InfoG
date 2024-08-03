@@ -1,63 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Verifica se l'utente è già loggato
-    if (localStorage.getItem('loggedIn')) {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('welcome-container').style.display = 'block';
-        document.getElementById('welcome-message').textContent = `Benvenuto ${localStorage.getItem('username')}`;
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let rememberMe = document.getElementById('remember-me').checked;
+
+    // Simulazione di controllo delle credenziali
+    if (username === 'test' && password === 'password') {
+        if (rememberMe) {
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+        }
+        showWelcomeMessage(username);
+    } else {
+        showPopup("Credenziali non valide. Riprova.");
     }
 });
 
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const rememberMe = document.getElementById('remember-me').checked;
+function showWelcomeMessage(username) {
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('welcome-message').innerText = `Benvenuto, ${username}!`;
+    document.getElementById('welcome-container').style.display = 'block';
+}
 
-    const credentials = {
-        'utente1': 'password1',
-        'utente2': 'password2',
-        'utente3': 'password3'
-    };
+function showPopup(message) {
+    document.getElementById('popup').querySelector('h4').innerText = message;
+    document.getElementById('popup-overlay').style.display = 'flex';
+}
 
-    if (credentials[username] && credentials[username] === password) {
-        if (rememberMe) {
-            localStorage.setItem('loggedIn', 'true');
-            localStorage.setItem('username', username);
-        } else {
-            sessionStorage.setItem('loggedIn', 'true');
-            sessionStorage.setItem('username', username);
-        }
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('welcome-container').style.display = 'block';
-        document.getElementById('welcome-message').textContent = `Benvenuto ${username}`;
-    } else {
-        alert('Credenziali non valide');
-    }
+document.getElementById('popup-close').addEventListener('click', function() {
+    document.getElementById('popup-overlay').style.display = 'none';
 });
 
 function logout() {
-    localStorage.removeItem('loggedIn');
     localStorage.removeItem('username');
-    sessionStorage.removeItem('loggedIn');
-    sessionStorage.removeItem('username');
+    localStorage.removeItem('password');
     document.getElementById('welcome-container').style.display = 'none';
     document.getElementById('login-container').style.display = 'block';
 }
 
-// Gestione della navigazione per la sezione Camion
-document.querySelectorAll('.nav-link')[0].addEventListener('click', function(event) {
-    event.preventDefault();
-    window.location.href = 'camion.html'; // Naviga alla pagina camion.html
-});
-
-// Gestione della visualizzazione della sezione delle mappe
-document.getElementById('maps-container').addEventListener('click', function(event) {
-    if (event.target.tagName === 'BUTTON') {
-        hideMaps();
+document.addEventListener('DOMContentLoaded', function() {
+    let username = localStorage.getItem('username');
+    if (username) {
+        showWelcomeMessage(username);
     }
 });
-
-function hideMaps() {
-    document.getElementById('maps-container').style.display = 'none';
-}
