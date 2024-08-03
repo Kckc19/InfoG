@@ -3,153 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Percorsi di Trasporto</title>
+    <title>Indicazioni Stradali</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
         }
         h1 {
+            color: #2a2a2a;
+        }
+        nav {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
             text-align: center;
-            color: #333;
         }
-        .routes {
-            margin: 20px 0;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
         }
-        .route {
-            background: #fff;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        nav a:hover {
+            text-decoration: underline;
         }
-        .route a {
+        .section {
+            padding: 20px;
+        }
+        h2 {
+            color: #2a2a2a;
+        }
+        ul {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer a {
             color: #007bff;
             text-decoration: none;
         }
-        .route a:hover {
+        .footer a:hover {
             text-decoration: underline;
-        }
-        .pagination {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .pagination button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        .pagination button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-        .pagination button:hover {
-            background-color: #0056b3;
-        }
-        @media (max-width: 768px) {
-            .route {
-                padding: 10px;
-            }
-            .pagination button {
-                padding: 8px 15px;
-            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Indicazioni Stradali</h1>
+    </header>
+    <nav>
+        <a href="#deviazioni">Deviazioni</a>
+        <a href="#alternative">Alternative</a>
+        <a href="#normali">Normali</a>
+    </nav>
 
-<div class="container">
-    <h1>Percorsi di Trasporto</h1>
-
-    <!-- Pagina 1 -->
-    <div id="page1" class="page active">
-        <div class="routes">
-            <div class="route">
-                <h2>Percorsi Normali</h2>
-                <p><a href="https://goo.gl/maps/xmRxurqHiT9g4u3J8" target="_blank">Da Rossetto Mantova a Rossetto Desenzano</a></p>
-                <p><a href="https://goo.gl/maps/Snc7Fak8MGe2mNMe8" target="_blank">Da Rossetto Desenzano a Rossetto Mantova</a></p>
-                <p><a href="https://goo.gl/maps/UPLE7vnWbJX8mbx76" target="_blank">Rossetto a Faro (ritorno)</a></p>
-                <p><a href="https://goo.gl/maps/7vT8eFR9vUP5PJfr7" target="_blank">Rossetto a Occhiobello (andata)</a></p>
-                <p><a href="https://goo.gl/maps/juGSZmjzaYS2pu1e8" target="_blank">Rossetto a Occhiobello (ritorno)</a></p>
-                <p><a href="https://maps.app.goo.gl/ngSJ5ziimyCTKbPp7" target="_blank">Da Mantova a Casalgrande</a></p>
-                <p><a href="https://maps.app.goo.gl/dUxPq4y24P2EBHED9" target="_blank">Da Casalgrande a Mantova</a></p>
-                <p><a href="https://maps.app.goo.gl/EdzPjAfHeinRDkK76" target="_blank">Da Mantova a Fiorano</a></p>
-                <p><a href="https://maps.app.goo.gl/q71DJBZyVnsGkgvi6" target="_blank">Da Fiorano a Mantova</a></p>
-                <p><a href="http://maps.google.com/maps?saddr=Rossetto%20Trade%20Srl.&daddr=Rossetto%20Group%20Srl&geocode=FdEMsQIdL7ClACkFFwPditWBRzHDia0JZdXCSg%3D%3D%3BFR-2qQIdUxyjACmxq4fRfR2ARzHuNKhFKr13iw%3D%3D&dirflg=d" target="_blank">Da Rossetto Mantova a San Maurizio</a></p>
-                <p><a href="https://maps.app.goo.gl/xBhYsFNwQSrUVmm27" target="_blank">Da San Maurizio a Mantova</a></p>
-                <p><a href="https://maps.app.goo.gl/jPmrFScCZusTE22o6" target="_blank">Da Mantova a Torre</a></p>
-                <p><a href="https://maps.app.goo.gl/tTa1rdbCDCS5XaxY7" target="_blank">Da Torre a Mantova</a></p>
-            </div>
-        </div>
+    <div id="deviazioni" class="section">
+        <h2>Deviazioni</h2>
+        <ul>
+            <li><a href="https://maps.app.goo.gl/UfYQkcVkGNQPPnmq8">Pegognaga - Reggiolo - Rolo (Andata)</a></li>
+            <li><a href="https://maps.app.goo.gl/YFMxraWsPWGJSzGM7">Pegognaga - Reggiolo - Rolo (Ritorno)</a></li>
+            <li><a href="https://maps.app.goo.gl/XcD2SPJL1MbUTBW2A">Autostrada chiusa (Pegognaga - Reggiolo - Rolo)</a></li>
+            <li><a href="https://maps.app.goo.gl/M8M16FVF3nxtxNnk7">Autostrada chiusa (Reggiolo - Rolo - Pegognaga)</a></li>
+            <li><a href="https://maps.app.goo.gl/MmmLrQWRrf9zAH3g6">Alternativa Mantova - Suzzara (Lavori rotonda)</a></li>
+            <li><a href="https://maps.app.goo.gl/vYDr9cHrFz2mhsgS8">Alternativa Mantova - Zevio (Galleria chiusa)</a></li>
+            <li><a href="https://maps.app.goo.gl/S5M473UCrv4Evcxa9">Deviazione da Mantova a Suzzara</a></li>
+            <li><a href="https://maps.app.goo.gl/EScFu4z4ECRDqJYe8">Deviazione da Suzzara a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/fnBkWrLwLE7qQVmy9">Autostrada chiusa (Modena nord)</a></li>
+            <li><a href="https://maps.app.goo.gl/xawauBTg98irptLx5">Alternativa (Suzzara - Mantova)</a></li>
+        </ul>
     </div>
 
-    <!-- Pagina 2 -->
-    <div id="page2" class="page">
-        <div class="routes">
-            <div class="route">
-                <h2>Percorsi Alternativi</h2>
-                <p><a href="https://goo.gl/maps/y7eUBziqk72LV3cEA" target="_blank">Rossetto a Spaziani (andata)</a></p>
-                <p><a href="https://goo.gl/maps/nxSuoyqWZ5oMZzGW7" target="_blank">Rossetto a Spaziani (ritorno)</a></p>
-                <p><a href="https://goo.gl/maps/NozVYavkM8JduwVH6" target="_blank">Rossetto a Parona (andata)</a></p>
-                <p><a href="https://goo.gl/maps/MAuSVfHKzswrDF6r7" target="_blank">Rossetto a Parona (ritorno)</a></p>
-                <p><a href="https://goo.gl/maps/5EZrhT27E6fY7k4x7" target="_blank">Da Mantova a Mantova</a></p>
-                <p><a href="https://www.google.it/maps/dir/Rossetto+Trade+Srl.,+Via+Villanova+de+Bellis,+San+Giorgio+Bigarello,+MN/45.4203613,11.9355339/45.5350053,11.9515705/Iper+Rossetto,+Via+Caselle,+1,+35010+San+Giorgio+delle+Pertiche+PD/@45.5349931,11.9171001,13z/data=!3m1!5s0x477ed3a3821537df:0xd5aae46f72bca420!4m16!4m15!1m5!1m1!1s0x4781d58add031705:0x4ac2d56509ad89c3!2m2!1d10.8585433!2d45.1575851!1m0!1m0!1m5!1m1!1s0x477ed3a47c1a5f0d:0xafb9e945707413de!2m2!1d11.9248119!2d45.5392709!3e0" target="_blank">Da Mantova a San Giorgio delle Pertiche</a></p>
-                <p><a href="https://www.google.it/maps/dir/Iper+Rossetto,+Via+Caselle,+1,+35010+San+Giorgio+delle+Pertiche+PD/45.5127837,11.9189531/45.50497,11.9312082/Rossetto+Trade+Srl.,+Via+Villanova+de+Bellis,+San+Giorgio+Bigarello+MN/@45.4489766,11.8615783,15z/data=!3m1!5s0x477ed3a3821537df:0xd5aae46f72bca420!4m16!4m15!1m5!1m1!1s0x477ed3a47c1a5f0d:0xafb9e945707413de!2m2!1d11.9248119!2d45.5392709!1m0!1m0!1m5!1m1!1s0x4781d58add031705:0x4ac2d56509ad89c3!2m2!1d10.8585433!2d45.1575851!3e0" target="_blank">Da San Giorgio delle Pertiche a Mantova</a></p>
-            </div>
-        </div>
+    <div id="alternative" class="section">
+        <h2>Alternative</h2>
+        <ul>
+            <li><a href="https://maps.app.goo.gl/vcZeGE7VpNPeT6GG9">Mantova a Fiorano (Passando da Carpi)</a></li>
+            <li><a href="https://maps.app.goo.gl/3kDD8vHH9GrsLEtXA">Ritorno da Fiorano a Mantova (Passando da Carpi)</a></li>
+            <li><a href="https://maps.app.goo.gl/GbkjVERxL8URRhFr7">Mantova a Via Euclide</a></li>
+            <li><a href="https://maps.app.goo.gl/7nSPxavuEUyJwSCg6">Fiorano alternativa passando Campogalliano</a></li>
+            <li><a href="https://maps.app.goo.gl/1AKABXPG1hGRhTig9">Alternativa da Mantova a Fiorano passando Galliano</a></li>
+            <li><a href="https://maps.app.goo.gl/ZJDonNR6z3DJSVC28">Mantova a Concesio</a></li>
+            <li><a href="https://maps.app.goo.gl/2yLJ2ftQY...">Mantova a Zevio passando da Nogarole</a></li>
+            <li><a href="https://maps.app.goo.gl/Z5q1aFiaiWhmPFJL8">Zevio a Concesio</a></li>
+            <li><a href="https://maps.app.goo.gl/yCK9cAMaYtpW9yVZ6">Rezzato a Concesio</a></li>
+            <li><a href="https://maps.app.goo.gl/fE8k5VUYH2JmPcj78">Concesio a Rezzato</a></li>
+        </ul>
     </div>
 
-    <!-- Paginazione -->
-    <div class="pagination">
-        <button id="prevPage" onclick="changePage(-1)">Precedente</button>
-        <button id="nextPage" onclick="changePage(1)">Successivo</button>
+    <div id="normali" class="section">
+        <h2>Normali</h2>
+        <ul>
+            <li><a href="https://goo.gl/maps/xmRxurqHiT9g4u3J8">Rossetto Mantova a Rossetto Desenzano</a></li>
+            <li><a href="https://goo.gl/maps/Snc7Fak8MGe2mNMe8">Rossetto Desenzano a Rossetto Mantova</a></li>
+            <li><a href="https://goo.gl/maps/UPLE7vnWbJX8mbx76">Rossetto Mantova a Faro (Andata)</a></li>
+            <li><a href="https://goo.gl/maps/7vT8eFR9vUP5PJfr7">Rossetto Faro a Mantova (Ritorno)</a></li>
+            <li><a href="https://goo.gl/maps/y7eUBziqk72LV3cEA">Rossetto Mantova a Occhiobello (Andata)</a></li>
+            <li><a href="https://goo.gl/maps/nxSuoyqWZ5oMZzGW7">Rossetto Occhiobello a Mantova (Ritorno)</a></li>
+            <li><a href="https://goo.gl/maps/NozVYavkM8JduwVH6">Rossetto Mantova a Parona (Andata)</a></li>
+            <li><a href="https://goo.gl/maps/MAuSVfHKzswrDF6r7">Rossetto Parona a Mantova (Ritorno)</a></li>
+            <li><a href="https://maps.app.goo.gl/ngSJ5ziimyCTKbPp7">Mantova a Casalgrande</a></li>
+            <li><a href="https://maps.app.goo.gl/dUxPq4y24P2EBHED9">Casalgrande a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/EdzPjAfHeinRDkK76">Mantova a Fiorano</a></li>
+            <li><a href="https://maps.app.goo.gl/q71DJBZyVnsGkgvi6">Fiorano a Mantova</a></li>
+            <li><a href="http://maps.google.com/maps?saddr=Rossetto%20Trade%20Srl.&daddr=Rossetto%20Group%20Srl&geocode=FdEMsQIdL7ClACkFFwPditWBRzHDia0JZdXCSg%3D%3D%3BFR-2qQIdUxyjACmxq4fRfR2ARzHuNKhFKr13iw%3D%3D&dirflg=d">Mantova a San Maurizio</a></li>
+            <li><a href="https://maps.app.goo.gl/xBhYsFNwQSrUVmm27">San Maurizio a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/jPmrFScCZusTE22o6">Mantova a Torre</a></li>
+            <li><a href="https://maps.app.goo.gl/tTa1rdbCDCS5XaxY7">Torre a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/ouXJau7PHymDYLN99">Rossetto Mantova a Rossetto Padova Sarpi</a></li>
+            <li><a href="https://maps.app.goo.gl/pxgVUoaoRmgE1hKb7">Zevio a Faro</a></li>
+            <li><a href="https://maps.app.goo.gl/z2oT8FKeatsfa5ow9">Zevio a Occhiobello (Autostrada chiusa)</a></li>
+            <li><a href="https://maps.app.goo.gl/fsbrJqS7rpBoTMCs9">Occhiobello a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/AWRqdfMGKehuCZ3B7">Mantova a CVA</a></li>
+            <li><a href="https://maps.app.goo.gl/XubtkzgPRyrqXVtw7">CVA a Mantova</a></li>
+            <li><a href="https://maps.app.goo.gl/JWBH1kPovvBh5NNv6">Occhiobello a Faro</a></li>
+            <li><a href="https://maps.app.goo.gl/9SMx4vh7EdQDpjaL9">Occhiobello a Faro passando da Nogara</a></li>
+            <li><a href="https://maps.app.goo.gl/6BTho6o1wDXUot1J8">Mantova a Occhiobello passando da Nogara</a></li>
+            <li><a href="https://maps.app.goo.gl/QntJWM83jRqsrLzq5">Occhiobello a Faro</a></li>
+            <li><a href="https://maps.app.goo.gl/FgMjRHsgRNyq1xMD7">Padova Sarpi a Mantova (Ritorno)</a></li>
+            <li><a href="https://maps.app.goo.gl/acjLaZCxu4n4LRVv6">Mantova a Padova Sarpi (Andata)</a></li>
+            <li><a href="https://maps.app.goo.gl/y9TkZneXk49Nx2zF9">Rossetto Bettola a Mantova</a></li>
+        </ul>
     </div>
-</div>
 
-<script>
-    let currentPage = 1;
-    const totalPages = 2;
-
-    function changePage(direction) {
-        const prevButton = document.getElementById('prevPage');
-        const nextButton = document.getElementById('nextPage');
-
-        // Hide current page
-        document.getElementById('page' + currentPage).classList.remove('active');
-
-        // Update page number
-        currentPage += direction;
-
-        // Show new page
-        document.getElementById('page' + currentPage).classList.add('active');
-
-        // Disable/enable buttons based on current page
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = currentPage === totalPages;
-    }
-
-    // Initialize
-    document.getElementById('prevPage').disabled = true;
-    document.getElementById('nextPage').disabled = false;
-</script>
-
+    <div class="footer">
+        <a href="index.html">Torna alla Home</a> |
+        <a href="intent://maps.google.com/?q=">Apri Google Maps</a>
+    </div>
 </body>
 </html>
